@@ -1,0 +1,43 @@
+package selenium.Workout;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Day8CommonNumbers {
+	
+	/* Write a java program to print the common numbers in between the two arrays.
+	 int[] array1 = { 1, 2, 5, 5, 8, 9, 7, 10 };
+	 int[] array2 = { 1, 0, 6, 15, 6, 4, 7, 0 };*/
+	
+
+	public static void main(String[] args) {
+		int[] array1 = { 1, 2, 5, 5, 8, 9, 7, 10 };
+		int[] array2 = { 1, 0, 6, 15, 6, 4, 7, 0 };
+		
+		Arrays.sort(array1);
+		Arrays.sort(array2);
+		System.out.println(Arrays.toString(array1));
+		System.err.println(Arrays.toString(array2));
+		Set<Integer> set1 = new LinkedHashSet<>();
+		Set<Integer> set2 = new LinkedHashSet<>();
+		for (int i = 0; i < array1.length; i++) {
+			set1.add(array1[i]);
+		}
+		for (int i = 0; i < array2.length; i++) {
+			set2.add(array2[i]);
+		}
+
+		System.out.println(set1);
+		System.out.println(set2);
+
+		for (Integer integer : set2) {
+			if (set1.contains(integer))
+				System.out.println(integer);
+		}
+		
+	
+
+}
+
+}
